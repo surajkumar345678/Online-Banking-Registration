@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Banking Registration</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-1ZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9s+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="title">UNIVERSAL BANK </div>
+    <hr>
+    <h4 class="subtitle">Registration - New User</h4>
+    <h6 class="asterisk">Mandatory fields are marked with an asterisk (*)</h6>
+    <form onsubmit="callValue()" action="POST">
+      <div class="form">
+
+        <div class="inputfield">
+          <label for="">Account Number *</label>
+          <input type="tel" class="input" name="account-number" id="account-number" maxlength="11"
+            placeholder="Enter your account number" pattern="[3]{1}[8]{1}[0][0-9]{8}"
+            title="(Account Number is available in your passbook and/or statement of account)" required>
+
+        </div>
+        <div class="inputfield">
+          <label>Account Type *</label>
+          <div class="custom_select">
+            <select id="account-type" name="account-type" title="(Select your type of account)" required>
+              <option>--Select type of account--</option>
+              <option value="Current-Account">Current Account</option>
+              <option value="Savings-Account">Savings Account</option>
+              <option value="Salary-Account">Salary Account</option>
+              <option value="Fixed-Deposit-Account">Fixed Deposit Account</option>
+              <option value="Recurring-Deposit-Account">Recurring Deposit Account</option>
+              <option value="NRI-Account">NRI Account</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="inputfield">
+          <label for="">CIF Number *</label>
+          <input type="tel" class="input" name="cif-number" id="cif-number" maxlength="11"
+            placeholder="Enter your cif number" pattern="[7-9]{1}[0-9]{10}"
+            title="(CIF Number is available in your passbook and/or statement of account)" required>
+        </div>
+
+        <div class="inputfield">
+          <label for="">Branch Code *</label>
+          <input type="tel" class="input" name="branch-code" id="branch-code" maxlength="5"
+            placeholder="Enter your branch code" pattern="[7-9]{2}[0-9]{3}"
+            title="(Please enter your 5 digit branch code)">
+        </div>
+
+        <div class="inputfield">
+          <label>Username *</label>
+          <input type="text" class="input" id="username" name="username" placeholder="Create your username" maxlength="30"
+            pattern="^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$" title="(Please create your username)" required>
+        </div>
+
+        <div class="inputfield">
+          <label>Password *</label>
+          <input type="password" class="input" id="password" name="password" placeholder="Create your password min 8 characters"
+            autocomplete="off" onkeyup='check()' pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="(Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters)"
+            maxlength="100" minlength="8" required>
+        </div>
+
+        <div class="inputfield">
+          <label>Confirm Password *</label>
+          <input type="password" onkeyup='check()' class="input" id="confirm-password" name="confirm-password"
+            placeholder="Confirm password" autocomplete="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="(Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters)"
+            maxlength="100" minlength="8" required>
+        </div>
+        <p id="message"></p>
+        <div class="inputfield">
+          <label>Country</label>
+          <div class="custom_select">
+            <select id="country" name="country" title="(Please select your country)">
+              <option>--Select Country--</option>
+              <option value="Afghanistan">Afghanistan</option>
+              <option value="Algeria">Algeria</option>
+              <option value="Antarctica">Antarctica</option>
+              <option value="Argentina">Argentina</option>
+              <option value="Armenia">Armenia</option>
+              <option value="Australia">Australia</option>
+              <option value="Austria">Austria</option>
+              <option value="Bahamas">Bahamas</option>
+              <option value="Bahrain">Bahrain</option>
+              <option value="Bangladesh">Bangladesh</option>
+              <option value="Belarus">Belarus</option>
+              <option value="Belgium">Belgium</option>
+              <option value="Bhutan">Bhutan</option>
+              <option value="Brazil">Brazil</option>
+              <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+              <option value="Cambodia">Cambodia</option>
+              <option value="Canada">Canada</option>
+              <option value="Chile">Chile</option>
+              <option value="China">China</option>
+              <option value="Colombia">Colombia</option>
+              <option value="Congo, Democratic Republic of the Congo">Congo, Democratic Republic of the Congo</option>
+              <option value="Cuba">Cuba</option>
+              <option value="Denmark">Denmark</option>
+              <option value="Egypt">Egypt</option>
+              <option value="Fiji">Fiji</option>
+              <option value="Finland">Finland</option>
+              <option value="France">France</option>
+              <option value="Germany">Germany</option>
+              <option value="Ghana">Ghana</option>
+              <option value="Guinea">Guinea</option>
+              <option value="Haiti">Haiti</option>
+              <option value="Hong Kong">Hong Kong</option>
+              <option value="Hungary">Hungary</option>
+              <option value="Iceland">Iceland</option>
+              <option value="India">India</option>
+              <option value="Indonesia">Indonesia</option>
+              <option value="Iraq">Iraq</option>
+              <option value="Ireland">Ireland</option>
+              <option value="Israel">Israel</option>
+              <option value="Italy">Italy</option>
+              <option value="Jamaica">Jamaica</option>
+              <option value="Japan">Japan</option>
+              <option value="Jordan">Jordan</option>
+              <option value="Kenya">Kenya</option>
+              <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+              <option value="Korea, Republic of">Korea, Republic of</option>
+              <option value="Kuwait">Kuwait</option>
+              <option value="Kyrgyzstan">Kyrgyzstan</option>
+              <option value="Luxembourg">Luxembourg</option>
+              <option value="Macao">Macao</option>
+              <option value="Malaysia">Malaysia</option>
+              <option value="Maldives">Maldives</option>
+              <option value="Mauritius">Mauritius</option>
+              <option value="Mexico">Mexico</option>
+              <option value="Mongolia">Mongolia</option>
+              <option value="Montenegro">Montenegro</option>
+              <option value="Myanmar">Myanmar</option>
+              <option value="Namibia">Namibia</option>
+              <option value="Nepal">Nepal</option>
+              <option value="Netherlands">Netherlands</option>
+              <option value="Netherlands Antilles">Netherlands Antilles</option>
+              <option value="New Caledonia">New Caledonia</option>
+              <option value="New Zealand">New Zealand</option>
+              <option value="Niger">Niger</option>
+              <option value="Nigeria">Nigeria</option>
+              <option value="Norway">Norway</option>
+              <option value="Oman">Oman</option>
+              <option value="Pakistan">Pakistan</option>
+              <option value="Palau">Palau</option>
+              <option value="Paraguay">Paraguay</option>
+              <option value="Peru">Peru</option>
+              <option value="Philippines">Philippines</option>
+              <option value="Poland">Poland</option>
+              <option value="Portugal">Portugal</option>
+              <option value="Qatar">Qatar</option>
+              <option value="Romania">Romania</option>
+              <option value="Rwanda">Rwanda</option>
+              <option value="Samoa">Samoa</option>
+              <option value="Saudi Arabia">Saudi Arabia</option>
+              <option value="Serbia">Serbia</option>
+              <option value="Singapore">Singapore</option>
+              <option value="South Africa">South Africa</option>
+              <option value="Spain">Spain</option>
+              <option value="Sri Lanka">Sri Lanka</option>
+              <option value="Sudan">Sudan</option>
+              <option value="Swaziland">Swaziland</option>
+              <option value="Sweden">Sweden</option>
+              <option value="Switzerland">Switzerland</option>
+              <option value="Taiwan, Province of China">Taiwan, Province of China</option>
+              <option value="Tajikistan">Tajikistan</option>
+              <option value="Thailand">Thailand</option>
+              <option value="Tunisia">Tunisia</option>
+              <option value="Turkey">Turkey</option>
+              <option value="Turkmenistan">Turkmenistan</option>
+              <option value="Uganda">Uganda</option>
+              <option value="Ukraine">Ukraine</option>
+              <option value="United Arab Emirates">United Arab Emirates</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="United States">United States</option>
+              <option value="Uruguay">Uruguay</option>
+              <option value="Uzbekistan">Uzbekistan</option>
+              <option value="Vanuatu">Vanuatu</option>
+              <option value="Venezuela">Venezuela</option>
+              <option value="Viet Nam">Viet Nam</option>
+              <option value="Virgin Islands, British">Virgin Islands, British</option>
+              <option value="Virgin Islands, U.s.">Virgin Islands, U.s.</option>
+              <option value="Wallis and Futuna">Wallis and Futuna</option>
+              <option value="Western Sahara">Western Sahara</option>
+              <option value="Yemen">Yemen</option>
+              <option value="Zambia">Zambia</option>
+              <option value="Zimbabwe">Zimbabwe</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="inputfield">
+          <label for="">Mobile Number *</label>
+          <div class="custom-select" id="phone-codes">
+            <select id="phone-code">
+              <option value="+91">+91</option>
+            </select>
+          </div>
+          <input type="tel" class="input" name="phone-number" maxlength="10" id="phone-number"
+            placeholder="Enter your phone number" pattern="[7-9]{1}[0-9]{9}"
+            title="(Please enter your registered phone number)">
+        </div>
+
+        <div class="inputfield">
+          <label for="">Facility Required *</label>
+          <input type="radio" name="facility" id="radio" value="Full Transaction Rights">Full Transaction Rights
+          <input type="radio" name="facility" id="radio" value="Limited Transaction Rights">Limited Transaction Rights
+        </div>
+
+
+        <div class="inputfield btns" id="btn">
+          <button type="submit" value="Register" class="btn" onclick="checkPassword()">Register</button>
+          <button type="reset" value="Reset" class="btn">Reset</button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+
+</body>
+<script src="script.js"></script>
+
+</html>

@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+ 
+  padding: 0 10px;
+  background-color: #2a2a72;
+background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+}
+
+.wrapper {
+  max-width: 600px;
+  width: 100%;
+  background: white;
+  margin: 50px auto;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.125);
+  padding: 30px;
+  border-radius: 1em;
+  border-width: 4px;
+  border-style: solid;
+  border-image: linear-gradient(315deg,#009ffd  0%,  #2a2a72 74%)1;
+  
+}
+
+.wrapper .title {
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 10px;
+  margin-top: -10px;
+  color: #2a2a72;
+  text-transform: uppercase;
+  text-align: left;
+}
+.wrapper .subtitle, .wrapper .asterisk{
+  margin: 10px 0;
+  font-weight: 800;
+}
+
+.wrapper .form {
+  width: 100%;
+
+}
+
+.wrapper .form .inputfield {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper .form .inputfield label {
+  width: 200px;
+  color: #2a2a72;
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.wrapper .form .inputfield .input
+ {
+  width: 80%;
+  outline: none;
+  border: 1px solid #009ffd;
+  font-size: 15px;
+  padding: 8px 10px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  
+}
+label{
+  padding-right: 20px;
+}
+
+.wrapper .form .inputfield .custom_select {
+  position: relative;
+  width: 100%;
+  height: 37px;
+}
+
+.wrapper .form .inputfield .custom_select:before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  border: 8px solid;
+  border-color: #009ffd transparent transparent transparent;
+  pointer-events: none;
+}
+
+.wrapper .form .inputfield .custom_select select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  width: 94%;
+  height: 100%;
+  border: 0px;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 1px solid #009ffd;
+  border-radius: 3px;
+  margin-left: 22px;
+}
+
+.wrapper .form .inputfield .input:focus,
+.wrapper .form .inputfield .custom_select select:focus {
+  border: 1px solid #282881;
+}
+
+.wrapper .form .inputfield p {
+  font-size: 14px;
+}
+
+
+
+#radio {
+  margin: 0 10px 0 10px;
+}
+
+.wrapper .form .inputfield .btn {
+  width: 40%;
+  padding: 8px 10px;
+  font-size: 15px;
+  font-weight: bold;
+  border: 0px;
+  
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+  outline: none;
+  background-color: #2a2a72;
+background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+}
+
+
+.wrapper .form .inputfield .btn:hover {
+  background: linear-gradient(to top left, #009ffd 0%, #282881 100%);
+
+}
+
+.wrapper .form .inputfield:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width:420px) {
+  .wrapper .form .inputfield {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .wrapper .form .inputfield label {
+    margin-bottom: 5px;
+  }
+
+  .wrapper .form .inputfield.terms {
+    flex-direction: row;
+  }
+
+  #btn{
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  #hobbies{
+    display:inline-block;
+    width: 30%;
+    
+  }
+  
+}
+
+#btn,
+#phone-codes {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#phone-codes {
+  width: 20%;
+  height: 37px;
+  margin-right:0px ;
+
+
+
+}
+
+.hobbies {
+  position: relative;
+  display: contents;
+  justify-content: flex-start;
+}
+
+#phone-number {
+  width: 70%;
+  margin-right: 0px;
+}
+
+#message {
+  font-size: 14px;
+  margin: 2px 0;
+  display: inline-block;
+  color: black;
+  padding: 5px 150px;
+}
+
+#name {
+  text-transform: capitalize;
+}
+#file-size{
+  color: #fe1e50;
+}
