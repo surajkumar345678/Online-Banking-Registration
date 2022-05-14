@@ -26,8 +26,9 @@ function callValue(){
     var country = document.getElementById("country").value;
     var radio = document.getElementById("radio").value;
 
-
-    document.writeln("Your Info: <br>");
+  
+    document.writeln("UNIVERSAL BANK <br>");
+    document.writeln("Your Details: <br>");
     document.writeln("Account Number: "+acno+"<br>");
     document.writeln("Account Type: "+actype+"<br>");
     document.writeln("CIF Number: "+cifno+"<br>");
