@@ -18,8 +18,7 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
   max-width: 600px;
   width: 100%;
   background: white;
-  margin: 4px auto;
-  
+  margin: 0px auto;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.125);
   padding: 30px;
   border-radius: 1em;
